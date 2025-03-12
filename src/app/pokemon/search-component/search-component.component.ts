@@ -3,12 +3,14 @@ import { Router } from '@angular/router';
 import { debounceTime, distinctUntilChanged, switchMap, Observable, Subject } from 'rxjs';
 import { Pokemon } from '../pokemon';
 import { PokemonService } from '../pokemon.service';
+import { NgFor, AsyncPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-search-component',
-  templateUrl: './search-component.component.html',
-  styles: [
-  ]
+    selector: 'app-search-component',
+    templateUrl: './search-component.component.html',
+    styles: [],
+    standalone: true,
+    imports: [NgFor, AsyncPipe]
 })
 export class SearchComponentComponent implements OnInit {
   // {...a..ab...abz..ab..abc}

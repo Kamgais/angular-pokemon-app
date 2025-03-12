@@ -3,12 +3,17 @@ import { Router } from '@angular/router';
 import { POKEMONS } from '../mock-pokemons';
 import { Pokemon } from '../pokemon';
 import { PokemonService } from '../pokemon.service';
+import { PokemonTypeColorPipe } from '../pokemon-type-color.pipe';
+import { BordCardDirective } from '../bord-card.directive';
+import { NgFor, DatePipe } from '@angular/common';
+import { SearchComponentComponent } from '../search-component/search-component.component';
 
 @Component({
-  selector: 'app-list-pokemon',
-  templateUrl: './list-pokemon.component.html',
-  styles: [
-  ]
+    selector: 'app-list-pokemon',
+    templateUrl: './list-pokemon.component.html',
+    styles: [],
+    standalone: true,
+    imports: [SearchComponentComponent, NgFor, BordCardDirective, DatePipe, PokemonTypeColorPipe]
 })
 export class ListPokemonComponent implements OnInit {
   pokemonList:Pokemon[]
